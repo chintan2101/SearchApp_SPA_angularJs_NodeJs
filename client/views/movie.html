@@ -1,0 +1,26 @@
+<div class="container">
+	
+	<div class="row">
+		<div class="col-md-3">
+			<img src="{{movie.image.medium}}" width="280" height="380">
+		</div>
+		<div class="col-md-9">
+			<h3>{{movie.name}}</h3>
+			<hr/>
+			<p ng-bind-html='movie.summary | trustHTML'></p>
+		</div>
+	</div>
+
+    <div class="container">
+    	<div ng-repeat="cast in movie._embedded.cast">
+    		<div class="col-md-6 row" character-block>
+    			<div>
+    				<img src="{{cast.character.image.medium}}" width="120" height="180">{{cast.person.name}} <p>as {{cast.character.name}}<p>
+    			</div>
+    			<div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+	
+</div>

@@ -1,0 +1,28 @@
+<div clas="col-md-12">
+    <div class="panel panel-primary">
+    	<div class="panel-heading">
+    		<div class="panel-title">
+    			
+    				{{show.show.name}}&nbsp; &nbsp;
+    				<small ng-repeat="s in show.show.genres">
+    							{{s}} 
+    							<span ng-if="show.show.genres[$index + 1]">|</span>
+					</small>
+    			
+    		</div>
+    	</div>
+    	<div class="panel-body">
+    		<div class="col-md-2">
+    			<a href="#">
+    				<img ng-src="{{show.show.image.medium}}" width="150" height="200">
+    			</a>
+    		</div>
+    		<div class="col-md-10">
+    			<p ng-bind-html='show.show.summary | trustHTML'></p>
+    		</div>
+            <div>
+                <a ng-href="/movie/{{show.show.id}}">Read more</a>
+            </div>
+    	</div>
+   	</div>
+</div>
